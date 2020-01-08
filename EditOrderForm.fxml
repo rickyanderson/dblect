@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="646.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EditOrderFormController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="62.0" prefWidth="624.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="248.0" layoutY="15.0" text="Edit Order" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="84.0" prefHeight="201.0" prefWidth="624.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10;">
+         <children>
+            <TextField fx:id="customerName" layoutX="167.0" layoutY="60.0" onAction="#CustomerNameAction" prefHeight="31.0" prefWidth="343.0" />
+            <Label layoutX="110.0" layoutY="65.0" text="Name" />
+            <Label layoutX="110.0" layoutY="161.0" prefHeight="21.0" prefWidth="40.0" text="Email" />
+            <Label layoutX="83.0" layoutY="114.0" text="Phone No" />
+            <Label layoutX="230.0" layoutY="18.0" text="Customer Details" textFill="#908d8d">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerPhone" layoutX="167.0" layoutY="109.0" prefHeight="31.0" prefWidth="220.0" />
+            <TextField fx:id="customerEmail" layoutX="167.0" layoutY="156.0" prefHeight="31.0" prefWidth="220.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="11.0" layoutY="294.0" prefHeight="498.0" prefWidth="624.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="83.0" layoutY="77.0" prefHeight="21.0" prefWidth="76.0" text="Order Type" />
+            <Label layoutX="249.0" layoutY="25.0" text="Order Details" textFill="#908d8d">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="118.0" prefHeight="21.0" prefWidth="58.0" text="Delivery" />
+            <Label layoutX="101.0" layoutY="139.0" prefHeight="21.0" prefWidth="58.0" text="Address" />
+            <Button fx:id="editOrderButton" layoutX="494.0" layoutY="453.0" mnemonicParsing="false" onAction="#editOrder" prefHeight="31.0" prefWidth="116.0" style="-fx-background-color: #00ab66;" text="Edit Order" textFill="WHITE" />
+            <TextArea fx:id="deliveryAddress" layoutX="175.0" layoutY="118.0" prefHeight="171.0" prefWidth="343.0" />
+            <ComboBox fx:id="orderType" layoutX="175.0" layoutY="72.0" prefHeight="31.0" prefWidth="226.0" style="-fx-background-color: #D1D1D1;" />
+            <JFXDatePicker fx:id="deliveryDate" defaultColor="DODGERBLUE" layoutX="175.0" layoutY="348.0" prefHeight="31.0" prefWidth="257.0" />
+            <Label layoutX="68.0" layoutY="353.0" prefHeight="21.0" prefWidth="91.0" text="Delivery Date" />
+            <JFXDatePicker fx:id="orderDate" defaultColor="DODGERBLUE" layoutX="175.0" layoutY="304.0" prefHeight="31.0" prefWidth="257.0" />
+            <Label layoutX="83.0" layoutY="309.0" prefHeight="21.0" prefWidth="76.0" text="Order Date" />
+            <Label layoutX="68.0" layoutY="397.0" prefHeight="21.0" prefWidth="91.0" text="Delivery Time" />
+            <JFXTimePicker fx:id="deliveryTime" defaultColor="DODGERBLUE" layoutX="175.0" layoutY="395.0" prefHeight="25.0" prefWidth="257.0" />
+            <Label layoutX="59.0" layoutY="440.0" prefHeight="21.0" prefWidth="85.0" text="Delivery Charge" />
+            <TextField fx:id="deliveryCharge" layoutX="207.0" layoutY="435.0" prefHeight="31.0" prefWidth="193.0" />
+            <Label layoutX="176.0" layoutY="440.0" prefHeight="21.0" prefWidth="23.0" text="Rp.">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

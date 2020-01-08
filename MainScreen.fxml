@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1214.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="166.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="166.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Logo2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="HomeLabel" alignment="CENTER" layoutY="122.0" onMouseClicked="#HomeLabelClicked" prefHeight="57.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;" text="HOME" textAlignment="CENTER" textFill="#9a9a9a">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="HomeRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutY="122.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Label fx:id="OrderLabel" alignment="CENTER" layoutY="179.0" onMouseClicked="#OrderLabelClicked" prefHeight="57.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;" text="ORDER" textAlignment="CENTER" textFill="#9a9a9a">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="OrderRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Label fx:id="CustomerLabel" alignment="CENTER" layoutY="236.0" onMouseClicked="#CustomerLabelClicked" prefHeight="57.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;" text="CUSTOMER" textAlignment="CENTER" textFill="#9a9a9a">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="CustomerRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutY="236.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+            <Label fx:id="ProductLabel" alignment="CENTER" layoutY="293.0" onMouseClicked="#ProductLabelClicked" prefHeight="57.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;" text="PRODUCT" textAlignment="CENTER" textFill="#9a9a9a">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="ProductRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="HomePane" layoutX="166.0" prefHeight="700.0" prefWidth="1034.0" visible="false">
+         <children>
+            <Label layoutX="437.0" layoutY="38.0" text="Revenue Graph">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateStart" layoutX="269.0" layoutY="566.0" />
+            <DatePicker fx:id="dateEnd" layoutX="269.0" layoutY="607.0" />
+            <Label fx:id="FilterDateTitle" layoutX="147.0" layoutY="522.0" text="Filter By Date" textFill="#5596fd">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="StartDate" layoutX="147.0" layoutY="568.0" text="Start Date" textFill="#5596fd">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="EndDate" layoutX="147.0" layoutY="609.0" text="End Date" textFill="#5596fd">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="filterButton" layoutX="459.0" layoutY="607.0" mnemonicParsing="false" onAction="#filterButtonClicked" prefHeight="21.0" prefWidth="150.0" style="-fx-background-color: #00ab66;" text="Filter" textFill="WHITE" />
+            <BarChart fx:id="weeklyRevenueChart" layoutX="127.0" layoutY="105.0" prefHeight="400.0" prefWidth="827.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <ChoiceBox fx:id="bgModePicker" layoutX="459.0" layoutY="566.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="OrderPane" layoutX="166.0" prefHeight="700.0" prefWidth="1048.0">
+         <children>
+            <TableView fx:id="OrderTable" layoutX="28.0" layoutY="65.0" prefHeight="573.0" prefWidth="850.0">
+              <columns>
+                <TableColumn fx:id="OrdIDCol" prefWidth="116.0" resizable="false" text="Order ID" />
+                  <TableColumn fx:id="OrdCustCol" prefWidth="113.0" resizable="false" text="Customer" />
+                  <TableColumn fx:id="OrdTypeCol" minWidth="0.0" prefWidth="77.0" resizable="false" text="Type" />
+                  <TableColumn fx:id="OrdDateCol" prefWidth="110.0" resizable="false" text="Order Date" />
+                  <TableColumn fx:id="OrdDeliveryDateCol" prefWidth="110.0" resizable="false" text="Delivery Date" />
+                  <TableColumn fx:id="OrdDeliveryTimeCol" prefWidth="90.0" resizable="false" text="Time" />
+                  <TableColumn fx:id="OrdStatusCol" prefWidth="124.0" resizable="false" text="Status" />
+                  <TableColumn fx:id="OrdBalanceDueCol" prefWidth="110.0" resizable="false" text="Balance Due" />
+              </columns>
+            </TableView>
+            <Label layoutX="29.0" layoutY="23.0" text="Orders">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font></Label>
+            <Label fx:id="NewOrderLabel" layoutX="775.0" layoutY="29.0" onMouseClicked="#NewOrderClicked" text="+ New Order" textFill="#5596fd">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="DeleteOrderLabel" layoutX="755.0" layoutY="660.0" onMouseClicked="#DeleteOrderClicked" text="- Delete Order" textFill="#ff1818">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="EditOrderLabel" layoutX="30.0" layoutY="660.0" onMouseClicked="#EditOrderClicked" text="Edit Order" textFill="#684efc">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="OverviewLabel" layoutX="926.0" layoutY="67.0" text="Overview" textFill="#5596fd">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="OrderFilterComboBox" layoutX="145.0" layoutY="24.0" onAction="#RefreshOrderList" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #D1D1D1;" />
+            <Label fx:id="DoneOrderLabel" layoutX="912.0" layoutY="123.0" text="Done Orders">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="OngoingOrderLabel" layoutX="900.0" layoutY="205.0" text="Ongoing Orders">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="PaymentPendingLabel" layoutX="893.0" layoutY="293.0" text="Payment Pending">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="TotalRevenueLabel" layoutX="904.0" layoutY="379.0" text="Total Revenue">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="DetailsOrderLabel" layoutX="397.0" layoutY="660.0" onMouseClicked="#DetailsOrderClicked" text="Details" textFill="#684efc">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="OrderDateFilter" layoutX="320.0" layoutY="24.0" prefHeight="31.0" prefWidth="184.0" />
+            <Button fx:id="filterDateButton" layoutX="511.0" layoutY="23.0" mnemonicParsing="false" onAction="#RefreshOrderTable" prefHeight="31.0" prefWidth="116.0" style="-fx-background-color: #00ab66;" text="Filter by Date" textFill="WHITE" />
+            <Label fx:id="DoneOrders" alignment="CENTER" contentDisplay="BOTTOM" layoutX="876.0" layoutY="154.0" prefHeight="31.0" prefWidth="174.0" text="0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="OngoingOrders" alignment="CENTER" contentDisplay="BOTTOM" layoutX="877.0" layoutY="237.0" prefHeight="31.0" prefWidth="174.0" text="0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="PaymentPending" alignment="CENTER" contentDisplay="BOTTOM" layoutX="877.0" layoutY="321.0" prefHeight="31.0" prefWidth="174.0" text="0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="TotalRevenue" alignment="CENTER" contentDisplay="BOTTOM" layoutX="878.0" layoutY="407.0" prefHeight="31.0" prefWidth="174.0" text="0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane fx:id="CustomerPane" layoutX="166.0" prefHeight="700.0" prefWidth="1052.0" visible="false">
+         <children>
+            <TableView fx:id="CustomerTable" layoutX="28.0" layoutY="65.0" prefHeight="573.0" prefWidth="850.0">
+               <columns>
+                  <TableColumn fx:id="CustNoCol" prefWidth="30.0" resizable="false" text="#" />
+                  <TableColumn fx:id="CustIDCol" prefWidth="95.0" resizable="false" text="Customer ID" />
+                  <TableColumn fx:id="CustNameCol" prefWidth="250.0" resizable="false" text="Name" />
+                  <TableColumn fx:id="CustPhoneCol" prefWidth="170.0" resizable="false" text="Phone Number" />
+                  <TableColumn fx:id="CustEmailCol" prefWidth="180.0" resizable="false" text="Email" />
+                  <TableColumn fx:id="CustStatusCol" prefWidth="125.0" resizable="false" text="Status" />
+               </columns>
+            </TableView>
+            <Label layoutX="28.0" layoutY="21.0" text="Customers">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="NewCustomerLabel" layoutX="745.0" layoutY="26.0" onMouseClicked="#NewCustomerClicked" text="+ New Customer" textFill="#5596fd">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="DeleteCustomerLabel" layoutX="731.0" layoutY="655.0" onMouseClicked="#DeleteCustomerClicked" text="- Delete Customer" textFill="#ff1818">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="CustomerComboBox" layoutX="204.0" layoutY="21.0" onAction="#RefreshCustomerTable" prefHeight="31.0" prefWidth="184.0" style="-fx-background-color: #D1D1D1;" />
+            <Label fx:id="EditCustomerLabel" layoutX="28.0" layoutY="655.0" onMouseClicked="#EditCustomerClicked" text="Edit Customer" textFill="#684efc">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ProductPane" layoutX="166.0" prefHeight="700.0" prefWidth="1052.0" visible="false">
+         <children>
+            <TableView fx:id="ProductTable" layoutX="28.0" layoutY="65.0" prefHeight="573.0" prefWidth="850.0">
+               <columns>
+                  <TableColumn fx:id="ProdNoCol" prefWidth="30.0" resizable="false" text="#" />
+                  <TableColumn fx:id="ProdIDCol" prefWidth="150.0" resizable="false" text="Product ID" />
+                  <TableColumn fx:id="ProdNameCol" prefWidth="305.0" resizable="false" text="Name" />
+                  <TableColumn fx:id="ProdTypeCol" prefWidth="160.0" resizable="false" text="Type" />
+                  <TableColumn fx:id="ProdPriceCol" prefWidth="205.0" resizable="false" text="Price" />
+               </columns>
+            </TableView>
+            <Label layoutX="28.0" layoutY="21.0" text="Products">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="NewProductLabel" layoutX="759.0" layoutY="26.0" onMouseClicked="#NewProductClicked" text="+ New Product" textFill="#5596fd">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="DeleteProductLabel" layoutX="743.0" layoutY="655.0" onMouseClicked="#DeleteProductClicked" text="- Delete Product" textFill="#ff1818">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="EditProductLabel" layoutX="27.0" layoutY="655.0" onMouseClicked="#EditProductClicked" text="Edit Product" textFill="#684efc">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="FilterProduct" layoutX="170.0" layoutY="21.0" onAction="#RefreshProductTable" prefHeight="31.0" prefWidth="184.0" style="-fx-background-color: #D1D1D1;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
